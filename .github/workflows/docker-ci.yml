@@ -3,7 +3,7 @@ name: Build and Push Docker Image
 on:
   push:
     branches:
-      - main
+      - "1.0"
   pull_request:
 
 jobs:
@@ -16,7 +16,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v5
         with:
-          images: ${{ vars.DOCKER_USERNAME }}/hiddenservice:1.0
+          images: ${{ vars.DOCKER_USERNAME }}/hiddenservice
       - name: Log in to Docker Hub
         uses: docker/login-action@v3
         with:
